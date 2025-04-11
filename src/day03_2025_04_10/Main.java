@@ -1,4 +1,4 @@
-package day01_2025_04_10;
+package day03_2025_04_10;
 
 import java.util.*;
 
