@@ -1,4 +1,4 @@
-package day05_2025_04_12;
+package template;
 
 import java.util.*;
 

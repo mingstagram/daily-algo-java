@@ -1,6 +1,6 @@
-package day39_2025_04_08;
+package day46_2025_04_14;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
