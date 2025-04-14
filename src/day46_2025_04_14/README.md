@@ -1,41 +1,59 @@
-# 📅 2025-04-08 - TODO 문제명 (백준 TODO번호)
+# 📅 2025-04-14 - 피보나치 함수 (백준 1003)
 
-<!-- 문제 링크 -->
-- 문제 링크: [https://www.acmicpc.net/problem/TODO번호](https://www.acmicpc.net/problem/TODO번호)
-- 난이도: TODO난이도
-- 알고리즘 분류: TODO
+- 문제 링크: [https://www.acmicpc.net/problem/1003](https://www.acmicpc.net/problem/1003)
+- 난이도: 실버 3
+- 알고리즘 분류: 다이나믹 프로그래밍(DP)
 
 ---
 
 ## 📌 문제 요약
 
-- TODO
+- 재귀로 구현된 피보나치 함수에서 `f(0)`과 `f(1)`이 각각 호출되는 횟수를 출력해야 함
+- 입력은 여러 개의 테스트 케이스로 주어지며, 각 테스트 케이스에 대해 `0` 또는 `1`이 출력되는 횟수를 각각 출력
 
 ---
 
 ## 🔍 접근 방식
 
-- TODO
+- 단순 재귀로 풀면 **중복 호출**이 너무 많아 시간 초과 발생
+- **0과 1이 각각 몇 번 호출되는지**를 `dp[n][0]`, `dp[n][1]`에 저장
+- 점화식:
+    - `dp[n][0] = dp[n-1][0] + dp[n-2][0]`
+    - `dp[n][1] = dp[n-1][1] + dp[n-2][1]`
+- 미리 `dp` 배열을 채워두고, 테스트케이스마다 바로 결과 출력
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- TODO
+- 피보나치 수열 문제는 **재귀 → DP 최적화**로 가는 흐름을 연습하기에 적절
+- 단순히 피보나치 수만 계산하는 것이 아니라, **호출 횟수를 추적해야 한다는 점이 핵심**
+- DP 배열을 2차원으로 설계하고, 호출 횟수를 기록한 점이 인상적
 
 ---
 
 ## 💻 코드
 
-```java
-package day39_2025_04_08;
-
+```java 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // TODO: 문제 풀이 로직 작성
+        int T = sc.nextInt(); // 테스트 케이스 수
+
+        int[][] dp = new int[41][2]; // 0 <= n <= 40
+        dp[0][0] = 1; dp[0][1] = 0; // f(0) 호출 시
+        dp[1][0] = 0; dp[1][1] = 1; // f(1) 호출 시
+
+        for (int i = 2; i <= 40; i++) {
+            dp[i][0] = dp[i-1][0] + dp[i-2][0];
+            dp[i][1] = dp[i-1][1] + dp[i-2][1];
+        }
+
+        for (int t = 0; t < T; t++) {
+            int n = sc.nextInt();
+            System.out.println(dp[n][0] + " " + dp[n][1]);
+        }
     }
 }
-```
