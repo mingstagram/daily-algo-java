@@ -47,18 +47,23 @@
 | 2025-04-09 | 실버3 | N과 M (4) - 15652 | [링크](https://www.acmicpc.net/problem/15652) |   ✅   |
 | 2025-04-10 | 실버3 | 주유소 - 13305 | [링크](https://www.acmicpc.net/problem/13305) |   ✅   |
 | 2025-04-11 | 실버3 | 문자열 집합 - 14425 | [링크](https://www.acmicpc.net/problem/14425) |   ✅   |
-| 2025-04-12 | 실버2 | DFS와 BFS - 1260 | [링크](https://www.acmicpc.net/problem/1260) |   ✅   |
-| 2025-04-13 | 실버2 | 연결 요소의 개수 - 11724 | [링크](https://www.acmicpc.net/problem/11724) |       |
-| 2025-04-14 | 실버2 | 로또 - 6603 | [링크](https://www.acmicpc.net/problem/6603) |       |
-| 2025-04-15 | 실버2 | 부분수열의 합 - 1182 | [링크](https://www.acmicpc.net/problem/1182) |       |
-| 2025-04-16 | 실버2 | 수 고르기 - 2230 | [링크](https://www.acmicpc.net/problem/2230) |       |
-| 2025-04-17 | 실버2 | 랜선 자르기 - 1654 | [링크](https://www.acmicpc.net/problem/1654) |       |
-| 2025-04-18 | 실버2 | 유기농 배추 - 1012 | [링크](https://www.acmicpc.net/problem/1012) |       |
-| 2025-04-19 | 실버1 | 미로 탐색 - 2178 | [링크](https://www.acmicpc.net/problem/2178) |       |
-| 2025-04-20 | 실버1 | 안전 영역 - 2468 | [링크](https://www.acmicpc.net/problem/2468) |       |
-| 2025-04-21 | 실버1 | 연산자 끼워넣기 - 14888 | [링크](https://www.acmicpc.net/problem/14888) |       |
-| 2025-04-22 | 실버1 | 그림 - 1926 | [링크](https://www.acmicpc.net/problem/1926) |       |
-| 2025-04-23 | 골드5 | 토마토 - 7576 | [링크](https://www.acmicpc.net/problem/7576) |       |
-| 2025-04-24 | 골드5 | 물통 - 2251 | [링크](https://www.acmicpc.net/problem/2251) |       |
-| 2025-04-25 | 골드4 | 좋다 - 1253 | [링크](https://www.acmicpc.net/problem/1253) |       |
-| 2025-04-26 | 골드4 | 부분합 - 1806 | [링크](https://www.acmicpc.net/problem/1806) |       |
+| 2025-04-12 | 실버3 | 2×n 타일링 - 11726 | [링크](https://www.acmicpc.net/problem/11726) |   ✅    |
+| 2025-04-13 | 실버3 | 바이러스 - 2606 | [링크](https://www.acmicpc.net/problem/2606) |   ✅    |
+| 2025-04-14 | 실버3 | 피보나치 함수 - 1003 | [링크](https://www.acmicpc.net/problem/1003) |   ✅    |
+| 2025-04-15 | 실버3 | 계단 오르기 - 2579 | [링크](https://www.acmicpc.net/problem/2579) |       |
+| 2025-04-16 | 실버3 | 서로 다른 부분 문자열의 개수 - 11478 | [링크](https://www.acmicpc.net/problem/11478) |       |
+| 2025-04-17 | 실버2 | DFS와 BFS - 1260 | [링크](https://www.acmicpc.net/problem/1260) |      |
+| 2025-04-18 | 실버2 | 연결 요소의 개수 - 11724 | [링크](https://www.acmicpc.net/problem/11724) |       |
+| 2025-04-19 | 실버2 | 로또 - 6603 | [링크](https://www.acmicpc.net/problem/6603) |       |
+| 2025-04-20 | 실버2 | 부분수열의 합 - 1182 | [링크](https://www.acmicpc.net/problem/1182) |       |
+| 2025-04-21 | 실버2 | 수 고르기 - 2230 | [링크](https://www.acmicpc.net/problem/2230) |       |
+| 2025-04-22 | 실버2 | 랜선 자르기 - 1654 | [링크](https://www.acmicpc.net/problem/1654) |       |
+| 2025-04-23 | 실버2 | 유기농 배추 - 1012 | [링크](https://www.acmicpc.net/problem/1012) |       |
+| 2025-04-24 | 실버1 | 미로 탐색 - 2178 | [링크](https://www.acmicpc.net/problem/2178) |       |
+| 2025-04-25 | 실버1 | 안전 영역 - 2468 | [링크](https://www.acmicpc.net/problem/2468) |       |
+| 2025-04-26 | 실버1 | 연산자 끼워넣기 - 14888 | [링크](https://www.acmicpc.net/problem/14888) |       |
+| 2025-04-27 | 실버1 | 그림 - 1926 | [링크](https://www.acmicpc.net/problem/1926) |       |
+| 2025-04-28 | 골드5 | 토마토 - 7576 | [링크](https://www.acmicpc.net/problem/7576) |       |
+| 2025-04-29 | 골드5 | 물통 - 2251 | [링크](https://www.acmicpc.net/problem/2251) |       |
+| 2025-04-30 | 골드4 | 좋다 - 1253 | [링크](https://www.acmicpc.net/problem/1253) |       |
+| 2025-05-01 | 골드4 | 부분합 - 1806 | [링크](https://www.acmicpc.net/problem/1806) |       |

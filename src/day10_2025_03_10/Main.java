@@ -5,24 +5,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] pos = new int[11];
-        Arrays.fill(pos, -1);
 
-        int n = sc.nextInt();
         int count = 0;
-
-        for (int i = 0; i < n; i++) {
+        int N = sc.nextInt();
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0 ; i < N; i++) {
             int cow = sc.nextInt();
-            int side = sc.nextInt();
-
-            if (pos[cow] == -1) {
-                pos[cow] = side;
-            } else if (pos[cow] != side) {
-                count++;
-                pos[cow] = side;
+            int location = sc.nextInt();
+            if(map.containsKey(cow)) {
+                if(map.get(cow) != location) {
+                    count++;
+                }
             }
+            map.put(cow, location);
         }
-
         System.out.println(count);
+
     }
 }
