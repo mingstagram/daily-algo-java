@@ -2,32 +2,44 @@
 
 <!-- 문제 링크 -->
 - 문제 링크: [https://www.acmicpc.net/problem/20546](https://www.acmicpc.net/problem/20546)
-- 난이도: 실버 5
+- 난이도: 실버 3
 - 알고리즘 분류: 구현, 시뮬레이션
 
 ---
 
 ## 📌 문제 요약
 
-- BNP와 TIMING이라는 두 가지 매매 전략 중 어떤 전략이 더 수익이 높은지를 비교
-- 입력으로 초기 자금과 14일 간의 주가 정보가 주어짐
-- 각 전략의 방식대로 주식을 사고팔아 마지막 날 기준 자산 총액을 계산한 후, 더 높은 전략을 출력
+- 두 명의 투자자 **준현**과 **성민**이 각자 다른 전략으로 주식 거래를 진행한다.
+- 초기 자금으로 14일간 주식 매매를 시뮬레이션하여, 마지막 날 보유 자산이 더 많은 사람을 판별해야 한다.
+
+### ✅ 투자 전략
+
+#### 📈 BNP (준현)
+- Buy and Pray 전략.
+- 살 수 있으면 가능한 한 최대한 많이 매수.
+- 매도는 하지 않음.
+
+#### 📊 TIMING (성민)
+- 3일 연속 상승: 다음 날 하락을 예측하고 전량 매도.
+- 3일 연속 하락: 다음 날 상승을 예측하고 전량 매수.
+- 가격이 동일한 날은 상승/하락으로 간주하지 않음.
 
 ---
 
 ## 🔍 접근 방식
 
-- BNP 방식은 주가가 낮을 때 최대한 주식을 매수하고 이후 보유만 함
-- TIMING 방식은 3일 연속 상승 시 매도, 3일 연속 하락 시 매수
-- 각 전략별로 자산 계산 후 비교하여 결과 출력
+- 준현은 단순 매수 전략이라 매수 조건만 확인하면 됨.
+- 성민은 상태 추적(연속 상승/하락 일수)을 통해 조건 충족 시 매수/매도를 수행해야 함.
+- 마지막 날 보유 주식의 시세로 환산한 자산까지 합산.
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- 간단한 조건 기반 시뮬레이션 문제로, 전략에 따라 상태를 잘 추적하고 처리하면 됨
-- 전략 조건(3일 연속 상승/하락)에 대한 슬라이딩 윈도우 방식의 로직 구현이 핵심
-- 실제 금융 로직을 코드로 옮기는 연습에 적합한 문제
+- 주가 시뮬레이션 문제는 상태 추적과 조건 분기가 핵심.
+- 날짜 인덱스와 조건 충족 시점(다음 날 거래)에 대한 로직이 헷갈릴 수 있으므로 주의 필요.
+- 마지막 날 보유 주식에 대한 정산도 반드시 포함해야 함.
+- 조건이 복잡할수록 **단계별 print 디버깅이 큰 도움이 됨**.
 
 ---
 
@@ -37,50 +49,66 @@
 import java.util.*;
 
 public class Main {
+
+    static int[] stocks = new int[14];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int cash = sc.nextInt();
-        int[] prices = new int[14];
+        int money = sc.nextInt();
+
         for (int i = 0; i < 14; i++) {
-            prices[i] = sc.nextInt();
+            stocks[i] = sc.nextInt();
         }
 
-        // BNP 전략
-        int bnpCash = cash;
-        int bnpStock = 0;
-        for (int price : prices) {
-            int buyCount = bnpCash / price;
-            bnpStock += buyCount;
-            bnpCash -= buyCount * price;
-        }
-        int bnpTotal = bnpCash + bnpStock * prices[13];
+        int junhyun = junhyun_skill(money);
+        int sungmin = sungmin_skill(money);
 
-        // TIMING 전략
-        int timingCash = cash;
-        int timingStock = 0;
-        for (int i = 3; i < 14; i++) {
-            if (prices[i - 3] < prices[i - 2] &&
-                prices[i - 2] < prices[i - 1]) {
-                // 3일 연속 상승 → 전량 매도
-                timingCash += timingStock * prices[i];
-                timingStock = 0;
-            } else if (prices[i - 3] > prices[i - 2] &&
-                       prices[i - 2] > prices[i - 1]) {
-                // 3일 연속 하락 → 전액 매수
-                int buyCount = timingCash / prices[i];
-                timingStock += buyCount;
-                timingCash -= buyCount * prices[i];
-            }
-        }
-        int timingTotal = timingCash + timingStock * prices[13];
-
-        // 결과 비교
-        if (bnpTotal > timingTotal) {
+        if (junhyun > sungmin) {
             System.out.println("BNP");
-        } else if (bnpTotal < timingTotal) {
+        } else if (junhyun < sungmin) {
             System.out.println("TIMING");
         } else {
             System.out.println("SAMESAME");
         }
+    }
+
+    static int junhyun_skill(int money) {
+        int stock = 0;
+        for (int i = 0; i < 14; i++) {
+            if (money >= stocks[i]) {
+                stock += money / stocks[i];
+                money = money % stocks[i];
+            }
+        }
+        return money + stock * stocks[13];
+    }
+
+    static int sungmin_skill(int money) {
+        int stock = 0;
+        int up = 0, down = 0;
+
+        for (int i = 0; i < 13; i++) {
+            if (stocks[i] < stocks[i + 1]) {
+                up++;
+                down = 0;
+            } else if (stocks[i] > stocks[i + 1]) {
+                down++;
+                up = 0;
+            } else {
+                up = 0;
+                down = 0;
+            }
+
+            if (up >= 3) {
+                money += stock * stocks[i + 1];
+                stock = 0;
+            } else if (down >= 3) {
+                int canBuy = money / stocks[i + 1];
+                stock += canBuy;
+                money -= canBuy * stocks[i + 1];
+            }
+        }
+
+        return money + stock * stocks[13];
     }
 }

@@ -1,59 +1,59 @@
-# 📅 2025-03-12 - 소인수분해 (백준 11653)
+# 📅 2025-03-12 - 최대공약수와 최소공배수
 
-<!-- 문제 링크 -->
-- 문제 링크: [https://www.acmicpc.net/problem/11653](https://www.acmicpc.net/problem/11653)
+- 관련 문제 링크 (예시): [https://www.acmicpc.net/problem/2609](https://www.acmicpc.net/problem/2609)
 - 난이도: 브론즈 1
-- 알고리즘 분류: 수학, 정수론, 소수 판정, 소인수분해
+- 알고리즘 분류: 수학, 유클리드 호제법
 
 ---
 
 ## 📌 문제 요약
 
-- 정수 N이 주어졌을 때, N의 **소인수**를 오름차순으로 출력
-- 한 줄에 하나씩 출력하며, 더 이상 소인수가 없으면 종료 
+- 두 개의 자연수 `a`, `b`가 주어졌을 때,
+    - **최대공약수(GCD)**: 두 수가 공통으로 나눌 수 있는 가장 큰 수
+    - **최소공배수(LCM)**: 두 수의 공통 배수 중 가장 작은 수
+- 두 값을 각각 구해 출력하는 문제
 
 ---
 
 ## 🔍 접근 방식
 
-- 2부터 시작하여 N이 해당 수로 나눠질 수 있는 동안 계속 나눔
-- 나눌 수 없다면 다음 수로 증가
-- N이 1이 될 때까지 반복
-
-💡 시간복잡도는 약 `O(√N)`으로 충분히 빠름  
-※ 에라토스테네스의 체 없이도 소인수만 구하는 문제에서는 이 방식으로 충분
+- 최대공약수는 **유클리드 호제법**을 이용하여 재귀적으로 계산
+- 최소공배수는 `a * b / GCD(a, b)` 공식을 활용해 계산
+- 입력은 두 수 `a`, `b`, 출력은 각각의 결과
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- 소인수분해 문제는 **"나눌 수 있을 때까지 나눈다"**는 단순한 논리로 해결 가능
-- **반복문 안에서 내부적으로 N이 변하는 방식**에 익숙해지기 좋음
-- 소수를 찾는 문제와는 다르며, 굳이 소수 판별까지 갈 필요는 없음
+- 유클리드 호제법은 최대공약수를 구할 때 가장 빠르고 효율적인 방법
+- 최소공배수는 최대공약수를 기반으로 쉽게 구할 수 있음
+- 실전에서는 **오버플로우**를 방지하기 위해 long형이나 BigInteger도 고려할 수 있음
 
 ---
 
 ## 💻 코드
 
-```java
-package day04_2025_03_12;
-
+```java 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        for (int i = 2; i <= Math.sqrt(N); i++) {
-            while (N % i == 0) {
-                System.out.println(i);
-                N /= i;
-            }
-        }
+        System.out.println(gcd(a, b));
+        System.out.println(lcm(a, b));
+    }
 
-        if (N > 1) {
-            System.out.println(N);
-        }
+    // 최대공약수
+    static int gcd(int a, int b) {
+        if (b == 0) return a;
+        else return gcd(b, a % b);
+    }
+
+    // 최소공배수
+    static int lcm(int a, int b) {
+        return a * b / gcd(a, b);
     }
 }

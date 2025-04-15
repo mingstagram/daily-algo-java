@@ -16,7 +16,7 @@
 | 2025-03-09 | 브론즈1 | 일곱 난쟁이 - 2309 | [링크](https://www.acmicpc.net/problem/2309) |   ✅   |
 | 2025-03-10 | 브론즈1 | 소가 길을 건너간 이유 - 14467 | [링크](https://www.acmicpc.net/problem/14467) |   ✅   |
 | 2025-03-11 | 브론즈1 | 더하기 사이클 - 1110 | [링크](https://www.acmicpc.net/problem/1110) |   ✅   |
-| 2025-03-12 | 브론즈1 | 최대공약수와 최소공배수 - 2609 | [링크](https://www.acmicpc.net/problem/2609) |   ✅   |
+| 2025-03-12 | 브론즈1 | 최 대공약수와최소공배수 - 2609 | [링크](https://www.acmicpc.net/problem/2609) |   ✅   |
 | 2025-03-13 | 브론즈1 | 소인수분해 - 11653 | [링크](https://www.acmicpc.net/problem/11653) |   ✅   |
 | 2025-03-14 | 실버5 | 비밀번호 발음하기 - 4659 | [링크](https://www.acmicpc.net/problem/4659) |   ✅   |
 | 2025-03-15 | 실버5 | 기적의 매매법 - 20546 | [링크](https://www.acmicpc.net/problem/20546) |   ✅   |
@@ -50,7 +50,7 @@
 | 2025-04-12 | 실버3 | 2×n 타일링 - 11726 | [링크](https://www.acmicpc.net/problem/11726) |   ✅    |
 | 2025-04-13 | 실버3 | 바이러스 - 2606 | [링크](https://www.acmicpc.net/problem/2606) |   ✅    |
 | 2025-04-14 | 실버3 | 피보나치 함수 - 1003 | [링크](https://www.acmicpc.net/problem/1003) |   ✅    |
-| 2025-04-15 | 실버3 | 계단 오르기 - 2579 | [링크](https://www.acmicpc.net/problem/2579) |       |
+| 2025-04-15 | 실버3 | 계단 오르기 - 2579 | [링크](https://www.acmicpc.net/problem/2579) |   ✅    |
 | 2025-04-16 | 실버3 | 서로 다른 부분 문자열의 개수 - 11478 | [링크](https://www.acmicpc.net/problem/11478) |       |
 | 2025-04-17 | 실버2 | DFS와 BFS - 1260 | [링크](https://www.acmicpc.net/problem/1260) |      |
 | 2025-04-18 | 실버2 | 연결 요소의 개수 - 11724 | [링크](https://www.acmicpc.net/problem/11724) |       |
