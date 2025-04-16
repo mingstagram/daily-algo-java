@@ -5,19 +5,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int current = N;
-        int count = 0;
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        do{
-            int a = current / 10; // 십의 자리
-            int b = current % 10; // 일의 자리
-            int sum = a + b;
-            current = (b * 10) + (sum % 10);
-            count++;
-        } while (current != N);
+        System.out.println(gcd(a,b));
+        System.out.println(lcm(a,b));
+    }
 
-        System.out.println(count);
+    // 최대공약수
+    static int gcd(int a, int b) {
+        if(b == 0) return a;
+        else return gcd(b, a % b);
+    }
 
+    // 최소공배수
+    static int lcm(int a, int b) {
+        return a * b / gcd(a, b);
     }
 }

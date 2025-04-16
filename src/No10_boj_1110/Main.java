@@ -5,20 +5,18 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        int count = 0;
         int N = sc.nextInt();
-        Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0 ; i < N; i++) {
-            int cow = sc.nextInt();
-            int location = sc.nextInt();
-            if(map.containsKey(cow)) {
-                if(map.get(cow) != location) {
-                    count++;
-                }
-            }
-            map.put(cow, location);
-        }
+        int current = N;
+        int count = 0;
+
+        do{
+            int a = current / 10; // 십의 자리
+            int b = current % 10; // 일의 자리
+            int sum = a + b;
+            current = (b * 10) + (sum % 10);
+            count++;
+        } while (current != N);
+
         System.out.println(count);
 
     }

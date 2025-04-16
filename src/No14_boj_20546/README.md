@@ -1,38 +1,45 @@
-# 📅 2025-03-14 - 비밀번호 발음하기 (백준 4659)
+# 📅 2025-03-15 - 기적의 매매법 (백준 20546)
 
 <!-- 문제 링크 -->
-- 문제 링크: [https://www.acmicpc.net/problem/4659](https://www.acmicpc.net/problem/4659)
-- 난이도: 실버 5
-- 알고리즘 분류: 문자열, 구현
+- 문제 링크: [https://www.acmicpc.net/problem/20546](https://www.acmicpc.net/problem/20546)
+- 난이도: 실버 3
+- 알고리즘 분류: 구현, 시뮬레이션
 
 ---
 
 ## 📌 문제 요약
 
-- 입력으로 주어지는 문자열이 "좋은 비밀번호"인지 판단해야 함
-- 다음 조건을 모두 만족해야 함:
-    1. 모음(a, e, i, o, u)을 하나 이상 포함
-    2. 모음 혹은 자음이 **3개 이상 연속**으로 오면 안 됨
-    3. 같은 글자가 **연속적으로 두 번 오면 안 됨** (단, ee와 oo는 허용)
+- 두 명의 투자자 **준현**과 **성민**이 각자 다른 전략으로 주식 거래를 진행한다.
+- 초기 자금으로 14일간 주식 매매를 시뮬레이션하여, 마지막 날 보유 자산이 더 많은 사람을 판별해야 한다.
+
+### ✅ 투자 전략
+
+#### 📈 BNP (준현)
+- Buy and Pray 전략.
+- 살 수 있으면 가능한 한 최대한 많이 매수.
+- 매도는 하지 않음.
+
+#### 📊 TIMING (성민)
+- 3일 연속 상승: 다음 날 하락을 예측하고 전량 매도.
+- 3일 연속 하락: 다음 날 상승을 예측하고 전량 매수.
+- 가격이 동일한 날은 상승/하락으로 간주하지 않음.
 
 ---
 
 ## 🔍 접근 방식
 
-- 각 문자열에 대해 조건을 순차적으로 검사
-    - 모음 개수 카운트
-    - 연속된 모음/자음 개수 추적
-    - 이전 문자와 현재 문자가 같은지 비교 (예외 처리 포함)
-- 조건을 모두 만족하면 “acceptable”, 아니면 “not acceptable” 출력
-- 입력은 `"end"`가 나올 때까지 반복 처리
+- 준현은 단순 매수 전략이라 매수 조건만 확인하면 됨.
+- 성민은 상태 추적(연속 상승/하락 일수)을 통해 조건 충족 시 매수/매도를 수행해야 함.
+- 마지막 날 보유 주식의 시세로 환산한 자산까지 합산.
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- 문자열 검사 문제에서 상태(모음/자음 여부, 연속 횟수 등)를 잘 추적하는 것이 핵심
-- 조건이 많을수록 if 문 순서를 명확하게 정리하고, 예외 처리를 꼼꼼히 해야 함
-- 작은 조건 누락도 오답이 되므로 **예외 조건을 먼저 처리**하는 전략이 유효함
+- 주가 시뮬레이션 문제는 상태 추적과 조건 분기가 핵심.
+- 날짜 인덱스와 조건 충족 시점(다음 날 거래)에 대한 로직이 헷갈릴 수 있으므로 주의 필요.
+- 마지막 날 보유 주식에 대한 정산도 반드시 포함해야 함.
+- 조건이 복잡할수록 **단계별 print 디버깅이 큰 도움이 됨**.
 
 ---
 
@@ -42,57 +49,66 @@
 import java.util.*;
 
 public class Main {
+
+    static int[] stocks = new int[14];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int money = sc.nextInt();
 
-        while (true) {
-            String password = sc.nextLine();
-            if (password.equals("end")) break;
+        for (int i = 0; i < 14; i++) {
+            stocks[i] = sc.nextInt();
+        }
 
-            boolean isAcceptable = true;
-            boolean hasVowel = false;
-            int vowelCount = 0;
-            int consonantCount = 0;
-            char prev = 0;
+        int junhyun = junhyun_skill(money);
+        int sungmin = sungmin_skill(money);
 
-            for (int i = 0; i < password.length(); i++) {
-                char c = password.charAt(i);
+        if (junhyun > sungmin) {
+            System.out.println("BNP");
+        } else if (junhyun < sungmin) {
+            System.out.println("TIMING");
+        } else {
+            System.out.println("SAMESAME");
+        }
+    }
 
-                boolean isVowel = "aeiou".indexOf(c) != -1;
-
-                // 모음 포함 여부
-                if (isVowel) hasVowel = true;
-
-                // 연속 모음/자음 체크
-                if (isVowel) {
-                    vowelCount++;
-                    consonantCount = 0;
-                } else {
-                    consonantCount++;
-                    vowelCount = 0;
-                }
-
-                if (vowelCount >= 3 || consonantCount >= 3) {
-                    isAcceptable = false;
-                    break;
-                }
-
-                // 같은 글자 연속 체크 (ee, oo는 예외)
-                if (i > 0 && c == prev && c != 'e' && c != 'o') {
-                    isAcceptable = false;
-                    break;
-                }
-
-                prev = c;
-            }
-
-            if (!hasVowel) isAcceptable = false;
-
-            if (isAcceptable) {
-                System.out.println("<" + password + "> is acceptable.");
-            } else {
-                System.out.println("<" + password + "> is not acceptable.");
+    static int junhyun_skill(int money) {
+        int stock = 0;
+        for (int i = 0; i < 14; i++) {
+            if (money >= stocks[i]) {
+                stock += money / stocks[i];
+                money = money % stocks[i];
             }
         }
+        return money + stock * stocks[13];
+    }
+
+    static int sungmin_skill(int money) {
+        int stock = 0;
+        int up = 0, down = 0;
+
+        for (int i = 0; i < 13; i++) {
+            if (stocks[i] < stocks[i + 1]) {
+                up++;
+                down = 0;
+            } else if (stocks[i] > stocks[i + 1]) {
+                down++;
+                up = 0;
+            } else {
+                up = 0;
+                down = 0;
+            }
+
+            if (up >= 3) {
+                money += stock * stocks[i + 1];
+                stock = 0;
+            } else if (down >= 3) {
+                int canBuy = money / stocks[i + 1];
+                stock += canBuy;
+                money -= canBuy * stocks[i + 1];
+            }
+        }
+
+        return money + stock * stocks[13];
     }
 }

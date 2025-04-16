@@ -1,61 +1,59 @@
-# 📅 2025-03-11 - 더하기 사이클 (백준 1110)
+# 📅 2025-03-12 - 최대공약수와 최소공배수
 
-- 문제 링크: [https://www.acmicpc.net/problem/1110](https://www.acmicpc.net/problem/1110)
+- 관련 문제 링크 (예시): [https://www.acmicpc.net/problem/2609](https://www.acmicpc.net/problem/2609)
 - 난이도: 브론즈 1
-- 알고리즘 분류: 수학, 구현, 시뮬레이션
+- 알고리즘 분류: 수학, 유클리드 호제법
 
 ---
 
 ## 📌 문제 요약
 
-- 주어진 수 N(0 ≤ N ≤ 99)에 대해, 다음 연산을 반복하여 **처음 수로 돌아올 때까지의 반복 횟수(사이클 길이)**를 구하는 문제
-- 연산 방법:
-  1. N이 한 자리 수면 앞에 0을 붙여 두 자리 수로 간주
-  2. 각 자리의 숫자를 더함
-  3. 원래 수의 **일의 자리 숫자 + 합의 일의 자리 숫자**로 새로운 수 생성
-- 이렇게 반복하여 다시 원래 수로 돌아오는 데 걸리는 반복 횟수를 구함
+- 두 개의 자연수 `a`, `b`가 주어졌을 때,
+    - **최대공약수(GCD)**: 두 수가 공통으로 나눌 수 있는 가장 큰 수
+    - **최소공배수(LCM)**: 두 수의 공통 배수 중 가장 작은 수
+- 두 값을 각각 구해 출력하는 문제
 
 ---
 
 ## 🔍 접근 방식
 
-- 입력을 `current`라는 변수로 저장하고, **처음 입력값과 같아질 때까지 반복**
-- 각 반복에서 `current`를 10으로 나눠 **십의 자리(a)** 와 **일의 자리(b)** 를 추출
-- `sum = a + b`를 계산하고, 새로운 수는 `(b * 10) + (sum % 10)`
-- 처음 입력값과 같아질 때까지 `do-while` 루프로 반복 횟수 `count` 증가
+- 최대공약수는 **유클리드 호제법**을 이용하여 재귀적으로 계산
+- 최소공배수는 `a * b / GCD(a, b)` 공식을 활용해 계산
+- 입력은 두 수 `a`, `b`, 출력은 각각의 결과
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- 문자열이 아닌 **정수 자체로 자리수를 나누는 방법** 숙지: `숫자 / 10`, `숫자 % 10`
-- **do-while 루프 구조**는 조건과 상관없이 최소 1회 실행이 보장되므로 이 문제에 적합
-- 원래 수와 비교하여 사이클 종료를 판단하는 구조 이해
+- 유클리드 호제법은 최대공약수를 구할 때 가장 빠르고 효율적인 방법
+- 최소공배수는 최대공약수를 기반으로 쉽게 구할 수 있음
+- 실전에서는 **오버플로우**를 방지하기 위해 long형이나 BigInteger도 고려할 수 있음
 
 ---
 
 ## 💻 코드
 
-```java
-package day11_2025_03_11;
-
+```java 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int current = N;
-        int count = 0;
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        do {
-            int a = current / 10; // 십의 자리
-            int b = current % 10; // 일의 자리
-            int sum = a + b;
-            current = (b * 10) + (sum % 10);
-            count++;
-        } while (current != N);
+        System.out.println(gcd(a, b));
+        System.out.println(lcm(a, b));
+    }
 
-        System.out.println(count);
+    // 최대공약수
+    static int gcd(int a, int b) {
+        if (b == 0) return a;
+        else return gcd(b, a % b);
+    }
+
+    // 최소공배수
+    static int lcm(int a, int b) {
+        return a * b / gcd(a, b);
     }
 }

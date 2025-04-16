@@ -1,56 +1,98 @@
-# 📅 2025-03-13 - 소인수분해 (백준 11653)
+# 📅 2025-03-14 - 비밀번호 발음하기 (백준 4659)
 
 <!-- 문제 링크 -->
-- 문제 링크: [https://www.acmicpc.net/problem/11653](https://www.acmicpc.net/problem/11653)
-- 난이도: 브론즈 1
-- 알고리즘 분류: 수학, 정수론, 소수 판정, 소인수분해
+- 문제 링크: [https://www.acmicpc.net/problem/4659](https://www.acmicpc.net/problem/4659)
+- 난이도: 실버 5
+- 알고리즘 분류: 문자열, 구현
 
 ---
 
 ## 📌 문제 요약
 
-- 정수 N이 주어졌을 때, N의 소인수를 오름차순으로 출력
-- 하나의 소인수가 여러 번 나올 수 있음
-- 더 이상 소인수가 없으면 종료
+- 입력으로 주어지는 문자열이 "좋은 비밀번호"인지 판단해야 함
+- 다음 조건을 모두 만족해야 함:
+    1. 모음(a, e, i, o, u)을 하나 이상 포함
+    2. 모음 혹은 자음이 **3개 이상 연속**으로 오면 안 됨
+    3. 같은 글자가 **연속적으로 두 번 오면 안 됨** (단, ee와 oo는 허용)
 
 ---
 
 ## 🔍 접근 방식
 
-- 2부터 시작하여 N이 나누어질 수 있는 수인지 확인하고, 나눌 수 있는 동안 계속 나눔
-- 나누어지지 않을 경우 다음 수로 증가
-- N이 1이 될 때까지 반복
-- 반복이 끝난 후 N이 1보다 크면 그 수 역시 소인수이므로 출력
+- 각 문자열에 대해 조건을 순차적으로 검사
+    - 모음 개수 카운트
+    - 연속된 모음/자음 개수 추적
+    - 이전 문자와 현재 문자가 같은지 비교 (예외 처리 포함)
+- 조건을 모두 만족하면 “acceptable”, 아니면 “not acceptable” 출력
+- 입력은 `"end"`가 나올 때까지 반복 처리
 
 ---
 
 ## 💡 배운 점 / 회고
 
-- 소인수분해는 특정 수로 나누어 떨어질 때까지 나누는 방식으로 간단히 구현 가능
-- 소수를 구하는 문제와 달리, 소인수만 출력하면 되므로 소수 판별 과정 없이 효율적으로 풀이 가능
-- 시간 복잡도는 약 O(√N)으로 충분히 빠르게 처리 가능
+- 문자열 검사 문제에서 상태(모음/자음 여부, 연속 횟수 등)를 잘 추적하는 것이 핵심
+- 조건이 많을수록 if 문 순서를 명확하게 정리하고, 예외 처리를 꼼꼼히 해야 함
+- 작은 조건 누락도 오답이 되므로 **예외 조건을 먼저 처리**하는 전략이 유효함
 
 ---
 
 ## 💻 코드
 
-```java 
+```java
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
 
-        for (int i = 2; i <= Math.sqrt(N); i++) {
-            while (N % i == 0) {
-                System.out.println(i);
-                N /= i;
+        while (true) {
+            String password = sc.nextLine();
+            if (password.equals("end")) break;
+
+            boolean isAcceptable = true;
+            boolean hasVowel = false;
+            int vowelCount = 0;
+            int consonantCount = 0;
+            char prev = 0;
+
+            for (int i = 0; i < password.length(); i++) {
+                char c = password.charAt(i);
+
+                boolean isVowel = "aeiou".indexOf(c) != -1;
+
+                // 모음 포함 여부
+                if (isVowel) hasVowel = true;
+
+                // 연속 모음/자음 체크
+                if (isVowel) {
+                    vowelCount++;
+                    consonantCount = 0;
+                } else {
+                    consonantCount++;
+                    vowelCount = 0;
+                }
+
+                if (vowelCount >= 3 || consonantCount >= 3) {
+                    isAcceptable = false;
+                    break;
+                }
+
+                // 같은 글자 연속 체크 (ee, oo는 예외)
+                if (i > 0 && c == prev && c != 'e' && c != 'o') {
+                    isAcceptable = false;
+                    break;
+                }
+
+                prev = c;
             }
-        }
 
-        if (N > 1) {
-            System.out.println(N);
+            if (!hasVowel) isAcceptable = false;
+
+            if (isAcceptable) {
+                System.out.println("<" + password + "> is acceptable.");
+            } else {
+                System.out.println("<" + password + "> is not acceptable.");
+            }
         }
     }
 }
