@@ -1,10 +1,11 @@
-package No17_boj_11728;
+package No17_1_boj_3273;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
 
     }
 }
