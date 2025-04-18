@@ -1,4 +1,4 @@
-package No17_1_boj_3273;
+package No17_boj_3273;
 
 import java.util.Scanner;
 

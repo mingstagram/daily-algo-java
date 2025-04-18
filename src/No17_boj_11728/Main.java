@@ -1,4 +1,4 @@
-package No17_0_boj_11728;
+package No17_boj_11728;
 
 import java.util.*;
 
