@@ -31,9 +31,9 @@
 | 22 | 실버5  | 수 정렬하기 2 - 2751          | [링크](https://www.acmicpc.net/problem/2751)  | ✅ |
 | 23 | 실버5  | 덩치 - 7568                | [링크](https://www.acmicpc.net/problem/7568)  | ✅ |
 | 23 | 실버5  | 나이순 정렬 - 10814           | [링크](https://www.acmicpc.net/problem/10814) | ✅ |
-| 24 | 실버5  | 한수 - 1065                | [링크](https://www.acmicpc.net/problem/1065)  |  |
-| 25 | 실버5  | ROT13 - 11655            | [링크](https://www.acmicpc.net/problem/11655) |  |
-| 26 | 실버5  | 그룹 단어 체커 - 1316          | [링크](https://www.acmicpc.net/problem/1316)  |  |
+| 24 | 실버5  | 한수 - 1065                | [링크](https://www.acmicpc.net/problem/1065)  | ✅ |
+| 25 | 실버5  | ROT13 - 11655            | [링크](https://www.acmicpc.net/problem/11655) | ✅ |
+| 26 | 실버5  | 그룹 단어 체커 - 1316          | [링크](https://www.acmicpc.net/problem/1316)  | ✅ |
 | 27 | 실버4  | 보물 - 1026                | [링크](https://www.acmicpc.net/problem/1026)  |  |
 | 28 | 실버4  | 동전 0 - 11047             | [링크](https://www.acmicpc.net/problem/11047) |  |
 | 29 | 실버4  | ATM - 11399              | [링크](https://www.acmicpc.net/problem/11399) |  |
