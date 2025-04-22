@@ -35,8 +35,8 @@
 | 25 | 실버5  | ROT13 - 11655            | [링크](https://www.acmicpc.net/problem/11655) | ✅ |
 | 26 | 실버5  | 그룹 단어 체커 - 1316          | [링크](https://www.acmicpc.net/problem/1316)  | ✅ |
 | 27 | 실버4  | 보물 - 1026                | [링크](https://www.acmicpc.net/problem/1026)  | ✅ |
-| 28 | 실버4  | 동전 0 - 11047             | [링크](https://www.acmicpc.net/problem/11047) |  |
-| 29 | 골드5  | 회의실 배정 - 1931            | [링크](https://www.acmicpc.net/problem/1931) |  |
+| 28 | 실버4  | 동전 0 - 11047             | [링크](https://www.acmicpc.net/problem/11047) | ✅ |
+| 29 | 골드5  | 회의실 배정 - 1931            | [링크](https://www.acmicpc.net/problem/1931) | ✅ |
 | 29 | 실버4  | ATM - 11399              | [링크](https://www.acmicpc.net/problem/11399) |  |
 | 30 | 실버4  | 수 찾기 - 1920              | [링크](https://www.acmicpc.net/problem/1920)  |  |
 | 31 | 실버4  | 숫자 카드 2 - 10816          | [링크](https://www.acmicpc.net/problem/10816) |  |
