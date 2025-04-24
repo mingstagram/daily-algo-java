@@ -36,10 +36,13 @@
 | 26 | 실버5  | 그룹 단어 체커 - 1316          | [링크](https://www.acmicpc.net/problem/1316)  | ✅ |
 | 27 | 실버4  | 보물 - 1026                | [링크](https://www.acmicpc.net/problem/1026)  | ✅ |
 | 28 | 실버4  | 동전 0 - 11047             | [링크](https://www.acmicpc.net/problem/11047) | ✅ |
-| 29 | 골드5  | 회의실 배정 - 1931            | [링크](https://www.acmicpc.net/problem/1931) | ✅ |
-| 29 | 실버4  | ATM - 11399              | [링크](https://www.acmicpc.net/problem/11399) |  |
-| 30 | 실버4  | 수 찾기 - 1920              | [링크](https://www.acmicpc.net/problem/1920)  |  |
-| 31 | 실버4  | 숫자 카드 2 - 10816          | [링크](https://www.acmicpc.net/problem/10816) |  |
+| 29 | 골드5  | 회의실 배정 - 1931            | [링크](https://www.acmicpc.net/problem/1931)  | ✅ |
+| 29 | 실버4  | ATM - 11399              | [링크](https://www.acmicpc.net/problem/11399) | ✅ |
+| 30 | 실버4  | 수 찾기 - 1920              | [링크](https://www.acmicpc.net/problem/1920)  | ✅ |
+| 30 | 실버2  | 좌표 압축 - 18870            | [링크](https://www.acmicpc.net/problem/18870)  | ✅ |
+| 31 | 실버4  | 숫자 카드 2 - 10816          | [링크](https://www.acmicpc.net/problem/10816) | ✅ |
+| 32 | 브론즈1 | 피보나치 수 2 - 2748          | [링크](https://www.acmicpc.net/problem/2748)  | ✅ |
+| 32 | 실버3  | 2xn 타일링 - 11726          | [링크](https://www.acmicpc.net/problem/11726)  | ✅ |
 | 32 | 실버4  | 괄호 - 9012                | [링크](https://www.acmicpc.net/problem/9012)  |  |
 | 33 | 실버4  | 스택 - 10828               | [링크](https://www.acmicpc.net/problem/10828) |  |
 | 34 | 실버4  | 큐 - 10845                | [링크](https://www.acmicpc.net/problem/10845) |  |
