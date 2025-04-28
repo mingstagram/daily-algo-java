@@ -44,8 +44,8 @@
 | 32 | 브론즈1 | 피보나치 수 2 - 2748          | [링크](https://www.acmicpc.net/problem/2748)  |   ✅   |
 | 32 | 실버3  | 2xn 타일링 - 11726          | [링크](https://www.acmicpc.net/problem/11726) |   ✅   |
 | 32 | 실버3  | 2xn 타일링 2 - 11727        | [링크](https://www.acmicpc.net/problem/11727) |   ✅   |
-| 32 | 브론즈1 | 약수 - 1037                | [링크](https://www.acmicpc.net/problem/1037)  |       |
-| 32 | 실버4  | 괄호 - 9012                | [링크](https://www.acmicpc.net/problem/9012)  |       |
+| 32 | 브론즈1 | 약수 - 1037                | [링크](https://www.acmicpc.net/problem/1037)  |   ✅    |
+| 32 | 실버4  | 괄호 - 9012                | [링크](https://www.acmicpc.net/problem/9012)  |    ✅   |
 | 33 | 실버4  | 스택 - 10828               | [링크](https://www.acmicpc.net/problem/10828) |       |
 | 34 | 실버4  | 큐 - 10845                | [링크](https://www.acmicpc.net/problem/10845) |       |
 | 35 | 실버4  | 덱 - 10866                | [링크](https://www.acmicpc.net/problem/10866) |       |
