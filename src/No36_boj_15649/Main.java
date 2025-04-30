@@ -20,8 +20,7 @@ public class Main {
     }
 
     static void dfs(int depth) {
-
-        if(depth == m) {
+        if (depth == m) {
             for(int i = 0; i < m; i++) {
                 System.out.print(selected[i] + " ");
             }

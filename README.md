@@ -44,13 +44,14 @@
 | 32 | 브론즈1 | 피보나치 수 2 - 2748          | [링크](https://www.acmicpc.net/problem/2748)  |   ✅   |
 | 32 | 실버3  | 2xn 타일링 - 11726          | [링크](https://www.acmicpc.net/problem/11726) |   ✅   |
 | 32 | 실버3  | 2xn 타일링 2 - 11727        | [링크](https://www.acmicpc.net/problem/11727) |   ✅   |
-| 32 | 브론즈1 | 약수 - 1037                | [링크](https://www.acmicpc.net/problem/1037)  |   ✅    |
-| 32 | 실버4  | 괄호 - 9012                | [링크](https://www.acmicpc.net/problem/9012)  |    ✅   |
-| 33 | 실버4  | 스택 - 10828               | [링크](https://www.acmicpc.net/problem/10828) |   ✅    |
-| 34 | 실버4  | 큐 - 10845                | [링크](https://www.acmicpc.net/problem/10845) |   ✅    |
-| 35 | 실버4  | 덱 - 10866                | [링크](https://www.acmicpc.net/problem/10866) |   ✅    |
-| 36 | 실버3  | N과 M (1) - 15649         | [링크](https://www.acmicpc.net/problem/15649) |       |
-| 37 | 실버3  | N과 M (2) - 15650         | [링크](https://www.acmicpc.net/problem/15650) |       |
+| 32 | 브론즈1 | 약수 - 1037                | [링크](https://www.acmicpc.net/problem/1037)  |   ✅   |
+| 32 | 실버4  | 괄호 - 9012                | [링크](https://www.acmicpc.net/problem/9012)  |   ✅   |
+| 33 | 실버4  | 스택 - 10828               | [링크](https://www.acmicpc.net/problem/10828) |   ✅   |
+| 34 | 실버4  | 큐 - 10845                | [링크](https://www.acmicpc.net/problem/10845) |   ✅   |
+| 35 | 실버4  | 덱 - 10866                | [링크](https://www.acmicpc.net/problem/10866) |   ✅   |
+| 36 | 실버3  | N과 M (1) - 15649         | [링크](https://www.acmicpc.net/problem/15649) |   ✅   |
+| 37 | 실버3  | N과 M (2) - 15650         | [링크](https://www.acmicpc.net/problem/15650) |   ✅   |
+| 37 | 실버3  | 로또 - 6603        | [링크](https://www.acmicpc.net/problem/6603) |       |
 | 38 | 실버3  | N과 M (3) - 15651         | [링크](https://www.acmicpc.net/problem/15651) |       |
 | 39 | 실버3  | N과 M (4) - 15652         | [링크](https://www.acmicpc.net/problem/15652) |       |
 | 40 | 실버3  | 주유소 - 13305              | [링크](https://www.acmicpc.net/problem/13305) |       |
