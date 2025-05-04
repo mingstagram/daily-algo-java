@@ -55,7 +55,7 @@
 | 38 | 실버3  | N과 M (3) - 15651         | [링크](https://www.acmicpc.net/problem/15651) |   ✅    |
 | 39 | 실버3  | N과 M (4) - 15652         | [링크](https://www.acmicpc.net/problem/15652) |    ✅   |
 | 40 | 실버3  | 주유소 - 13305              | [링크](https://www.acmicpc.net/problem/13305) |   ✅    |
-| 41 | 실버3  | 문자열 집합 - 14425           | [링크](https://www.acmicpc.net/problem/14425) |       |
+| 41 | 실버4  | 문자열 집합 - 14425           | [링크](https://www.acmicpc.net/problem/14425) |   ✅    |
 | 42 | 실버3  | 2×n 타일링 - 11726          | [링크](https://www.acmicpc.net/problem/11726) |       |
 | 43 | 실버3  | 바이러스 - 2606              | [링크](https://www.acmicpc.net/problem/2606)  |       |
 | 44 | 실버3  | 피보나치 함수 - 1003           | [링크](https://www.acmicpc.net/problem/1003)  |       |
