@@ -1,4 +1,4 @@
-package No43_boj_2606;
+package No43_boj_11724;
 
 import java.util.*;
 
@@ -6,7 +6,6 @@ public class Main {
 
     static boolean[] visited;
     static List<Integer>[] graph;
-    static int total = 0;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -14,8 +13,7 @@ public class Main {
         int m = sc.nextInt();
         visited = new boolean[n + 1];
         graph = new ArrayList[n + 1];
-
-        for (int i = 1; i <= n; i++) {
+        for(int i = 1; i <= n; i++) {
             graph[i] = new ArrayList<>();
         }
 
@@ -26,14 +24,20 @@ public class Main {
             graph[b].add(a);
         }
 
-        dfs(1);
-        System.out.println(total - 1);
+        int count = 0;
+        for(int i = 1; i <= n; i++) {
+            if(!visited[i]) {
+                dfs(i);
+                count++;
+            }
+        }
+
+        System.out.println(count);
 
     }
 
     static void dfs(int node) {
         visited[node] = true;
-        total++;
 
         for(int next : graph[node]) {
             if(!visited[next]) {
@@ -41,4 +45,5 @@ public class Main {
             }
         }
     }
+
 }
