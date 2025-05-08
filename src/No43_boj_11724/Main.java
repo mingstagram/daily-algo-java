@@ -23,6 +23,9 @@ public class Main {
             graph[a].add(b);
             graph[b].add(a);
         }
+        for(int i = 1; i <= n; i++) {
+            Collections.sort(graph[i]);
+        }
 
         int count = 0;
         for(int i = 1; i <= n; i++) {
