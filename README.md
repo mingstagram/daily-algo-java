@@ -63,7 +63,7 @@
 | 43 | 실버2  | 유기농 배추 - 1012            | [링크](https://www.acmicpc.net/problem/1012)  |   ✅   |
 | 43 | 실버2  | 섬의 개수 - 4963             | [링크](https://www.acmicpc.net/problem/4963)  |    ✅   |
 | 44 | 실버3  | 피보나치 함수 - 1003           | [링크](https://www.acmicpc.net/problem/1003)  |   ✅    |
-| 45 | 실버3  | 계단 오르기 - 2579            | [링크](https://www.acmicpc.net/problem/2579)  |       |
+| 45 | 실버3  | 계단 오르기 - 2579            | [링크](https://www.acmicpc.net/problem/2579)  |   ✅    |
 | 46 | 실버3  | 서로 다른 부분 문자열의 개수 - 11478 | [링크](https://www.acmicpc.net/problem/11478) |       |
 | 47 | 실버2  | DFS와 BFS - 1260          | [링크](https://www.acmicpc.net/problem/1260)  |       |
 | 48 | 실버2  | 연결 요소의 개수 - 11724        | [링크](https://www.acmicpc.net/problem/11724) |       |
