@@ -64,19 +64,7 @@
 | 43 | 실버2  | 섬의 개수 - 4963             | [링크](https://www.acmicpc.net/problem/4963)  |    ✅   |
 | 44 | 실버3  | 피보나치 함수 - 1003           | [링크](https://www.acmicpc.net/problem/1003)  |   ✅    |
 | 45 | 실버3  | 계단 오르기 - 2579            | [링크](https://www.acmicpc.net/problem/2579)  |   ✅    |
-| 46 | 실버3  | 서로 다른 부분 문자열의 개수 - 11478 | [링크](https://www.acmicpc.net/problem/11478) |       |
-| 47 | 실버2  | DFS와 BFS - 1260          | [링크](https://www.acmicpc.net/problem/1260)  |       |
-| 48 | 실버2  | 연결 요소의 개수 - 11724        | [링크](https://www.acmicpc.net/problem/11724) |       |
-| 49 | 실버2  | 로또 - 6603                | [링크](https://www.acmicpc.net/problem/6603)  |       |
-| 50 | 실버2  | 부분수열의 합 - 1182           | [링크](https://www.acmicpc.net/problem/1182)  |       |
-| 51 | 실버2  | 수 고르기 - 2230             | [링크](https://www.acmicpc.net/problem/2230)  |       |
-| 52 | 실버2  | 랜선 자르기 - 1654            | [링크](https://www.acmicpc.net/problem/1654)  |       |
-| 53 | 실버1  | 유기농 배추 - 1012            | [링크](https://www.acmicpc.net/problem/1012)  |       |
-| 54 | 실버1  | 미로 탐색 - 2178             | [링크](https://www.acmicpc.net/problem/2178)  |       |
-| 55 | 실버1  | 안전 영역 - 2468             | [링크](https://www.acmicpc.net/problem/2468)  |       |
-| 56 | 실버1  | 연산자 끼워넣기 - 14888         | [링크](https://www.acmicpc.net/problem/14888) |       |
-| 57 | 실버1  | 그림 - 1926                | [링크](https://www.acmicpc.net/problem/1926)  |       |
-| 58 | 골드5  | 토마토 - 7576               | [링크](https://www.acmicpc.net/problem/7576)  |       |
-| 59 | 골드5  | 물통 - 2251                | [링크](https://www.acmicpc.net/problem/2251)  |       |
-| 60 | 골드4  | 좋다 - 1253                | [링크](https://www.acmicpc.net/problem/1253)  |       |
-| 61 | 골드4  | 부분합 - 1806               | [링크](https://www.acmicpc.net/problem/1806)  |       |
+| 46 | 실버3  | 서로 다른 부분 문자열의 개수 - 11478 | [링크](https://www.acmicpc.net/problem/11478) |   ✅    |
+| 47 | 실버3  | 두 수의 합 - 3273            | [링크](https://www.acmicpc.net/problem/3273)  |    ✅     | 
+| 48 | 실버4  | 나는야 포켓몬 마스터 이다솜 - 1620   | [링크](https://www.acmicpc.net/problem/1620)  |     ✅     | 
+| 49 | 실버4  | 숫자 카드 2 - 10816          | [링크](https://www.acmicpc.net/problem/10816)  |         | 
